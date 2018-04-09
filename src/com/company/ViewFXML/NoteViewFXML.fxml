@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.PerspectiveCamera?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ViewFXML.NoteViewControler">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="700.0" stylesheets="@StudentBack.css">
+          <center>
+              <SplitPane dividerPositions="0.821283979178716, 0.9962406015037594" prefHeight="465.0" prefWidth="700.0">
+                  <items>
+                      <TableView fx:id="tableView" prefHeight="500.0" prefWidth="600.0">
+                          <columns>
+                              <TableColumn fx:id="idField" prefWidth="185.0" text="IdStudent" />
+                              <TableColumn fx:id="numarField" prefWidth="142.39996337890625" text="Numar Tema" />
+                              <TableColumn fx:id="notaField" prefWidth="293.6000061035156" text="Nota" />
+                          </columns>
+                      </TableView>
+                      <VBox prefHeight="200.0" prefWidth="100.0" spacing="35.0">
+                          <children>
+                              <Label alignment="CENTER" prefHeight="62.0" prefWidth="531.0" text="Meniu">
+                                  <font>
+                                      <Font size="29.0" />
+                                  </font>
+                              </Label>
+                              <Separator prefWidth="200.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="30.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleAdd" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@addNota.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleUpdate" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@update.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleFilter" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@category.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </VBox.margin>
+                        </VBox>
+                          </children>
+                      </VBox>
+                      <PerspectiveCamera />
+                  </items>
+              </SplitPane>
+          </center>
+          <top>
+              <AnchorPane prefHeight="35.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                  <children>
+                      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="23.0" prefHeight="35.0" prefWidth="700.0" text="Interfata Note" textAlignment="CENTER" textOverrun="CLIP">
+                          <font>
+                              <Font name="Cambria Bold Italic" size="53.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </AnchorPane>
+          </top>
+          <bottom>
+              <HBox prefHeight="41.0" prefWidth="700.0" spacing="958.0" BorderPane.alignment="CENTER" />
+          </bottom>
+          <left>
+              <Separator orientation="VERTICAL" prefHeight="696.0" prefWidth="0.0" BorderPane.alignment="CENTER_LEFT">
+                  <BorderPane.margin>
+                      <Insets />
+                  </BorderPane.margin>
+                  <opaqueInsets>
+                      <Insets />
+                  </opaqueInsets>
+                  <effect>
+                      <Lighting>
+                          <bumpInput>
+                              <Shadow />
+                          </bumpInput>
+                          <light>
+                              <Light.Distant />
+                          </light>
+                      </Lighting>
+                  </effect>
+              </Separator>
+          </left>
+      </BorderPane>
+   </children>
+</HBox>

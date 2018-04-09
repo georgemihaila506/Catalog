@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ViewFXML.FilterNoteView">
+    <center>
+        <TableView fx:id="tableView" prefHeight="501.0" prefWidth="426.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="idField" prefWidth="119.20001220703125" text="IDStudent" />
+                <TableColumn fx:id="numarField" minWidth="1.5999755859375" prefWidth="96.79998016357422" text="Tema" />
+                <TableColumn fx:id="notaField" prefWidth="228.79998779296875" text="Nota" />
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox prefHeight="500.0" prefWidth="154.0" spacing="130.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="18.0" prefWidth="320.0" text="Filtrare Note">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="studentiCombo" prefWidth="150.0" promptText="Studenti" />
+                <ComboBox fx:id="temeCombo" prefWidth="150.0" promptText="Teme" />
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="54.0">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" onMouseClicked="#handleReload" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@reloadIcon.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" onMouseClicked="#handleIesire" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@exitIcon.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </right>
+   <left>
+      <TableView fx:id="studentTableView" prefHeight="523.0" prefWidth="77.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="numeColumn" prefWidth="75.0" text="Nume" />
+        </columns>
+      </TableView>
+   </left>
+</BorderPane>

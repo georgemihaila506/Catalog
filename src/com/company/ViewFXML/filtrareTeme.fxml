@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ViewFXML.FilterTeme">
+    <center>
+        <TableView fx:id="tableView" prefHeight="501.0" prefWidth="426.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="numarColumn" prefWidth="66.4000244140625" text="Numar" />
+                <TableColumn fx:id="descriereColumn" prefWidth="245.5999755859375" text="Descriere" />
+                <TableColumn fx:id="deadlineColumn" prefWidth="128.0" text="Deadline" />
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox prefHeight="500.0" prefWidth="154.0" spacing="130.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="18.0" prefWidth="320.0" text="Filtrare Teme">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="descriereCombo" prefWidth="150.0" promptText="Descriere" />
+                <ComboBox fx:id="deadlineCombo" prefWidth="150.0" promptText="Deadline" />
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="54.0">
+                    <children>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" onMouseClicked="#handleReload" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@reloadIcon.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" onMouseClicked="#handleIesire" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@exitIcon.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>

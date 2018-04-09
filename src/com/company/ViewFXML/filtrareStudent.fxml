@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ViewFXML.FilterStudentView">
+   <center>
+      <TableView fx:id="tableView" prefHeight="501.0" prefWidth="426.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idField" prefWidth="66.4000244140625" text="IDStudent" />
+          <TableColumn fx:id="numeField" prefWidth="100.79998779296875" text="Nume" />
+            <TableColumn fx:id="grupaField" prefWidth="58.4000244140625" text="Grupa" />
+            <TableColumn fx:id="emailField" prefWidth="116.00006103515625" text="Email" />
+            <TableColumn fx:id="tutoreField" prefWidth="101.59991455078125" text="Tutore" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <VBox prefHeight="500.0" prefWidth="154.0" spacing="130.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="320.0" text="Filtrare Studenti">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="grupaCombo" prefWidth="150.0" promptText="Grupa" />
+            <ComboBox fx:id="tutoreCombo" prefWidth="150.0" promptText="Tutore" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="54.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="50.0" onMouseClicked="#handleReload" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@reloadIcon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="50.0" onMouseClicked="#handleExit" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@exitIcon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

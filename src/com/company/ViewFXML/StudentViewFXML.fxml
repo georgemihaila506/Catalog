@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.ViewFXML.StudentViewController">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="698.0" stylesheets="@StudentBack.css">
+         <center>
+            <SplitPane dividerPositions="0.8028985507246377">
+               <items>
+                  <TableView fx:id="tableView" prefHeight="694.0" prefWidth="969.0">
+                    <columns>
+                      <TableColumn fx:id="idField" prefWidth="76.0" text="ID" />
+                        <TableColumn fx:id="numeField" prefWidth="160.0" text="Nume" />
+                        <TableColumn fx:id="grupaField" prefWidth="68.80001831054688" text="Grupa" />
+                        <TableColumn fx:id="emailField" prefWidth="188.79998779296875" text="Email" />
+                        <TableColumn fx:id="tutoreField" prefWidth="215.0" text="Tutore" />
+                    </columns>
+                  </TableView>
+                  <VBox fx:id="vboxM" prefHeight="622.0" prefWidth="219.0" spacing="20.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="62.0" prefWidth="531.0" text="Meniu">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <VBox spacing="30.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleAddStudent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@addStudent.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleUpdateStndent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@update.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleDeleteStudent" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@delete.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="100.0" onMouseClicked="#handleFilter" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@category.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="35.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="698.0" text="Interfata CRUD Student" textAlignment="CENTER" textOverrun="CLIP">
+                     <font>
+                        <Font name="Cambria Bold Italic" size="53.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <HBox prefHeight="41.0" prefWidth="1093.0" spacing="958.0" BorderPane.alignment="CENTER" />
+         </bottom>
+         <left>
+            <Separator orientation="VERTICAL" prefHeight="696.0" prefWidth="0.0" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Separator>
+         </left>
+      </BorderPane>
+   </children>
+</HBox>
